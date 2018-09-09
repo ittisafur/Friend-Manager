@@ -78,10 +78,10 @@ class FriendController extends Controller
      */
     public function edit($id)
     {
-        $editEducation = Education::all();
+        $editEducations = Education::all();
         $editLocations = Location::all();
         $editFriends = Friend::find($id);
-        return view('crud.edit', compact('editFriends', 'editEducation', 'editLocations'));
+        return view('crud.edit', compact('editFriends', 'editEducations', 'editLocations'));
     }
 
     /**
@@ -94,7 +94,8 @@ class FriendController extends Controller
     public function update(Request $request, $id)
     {
 
-        $friend = Friend::find($id)->update([
+        $friend = Friend::find($id);
+        $friend->update([
             'name' => $request->name,
             'gender' => $request->gender,
             'age' => $request->age,

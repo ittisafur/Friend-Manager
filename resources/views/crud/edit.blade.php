@@ -28,7 +28,7 @@
 		    	        <label class="mr-sm-2" for="inlineFormCustomSelect">Your friend's Country</label>
 		                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="countries[]">
 		                  <option selected>Country</option>
-		                  @foreach($locations as $location)
+		                  @foreach($editLocations as $editLocation)
 		                  <option value="{{$editLocation->id}}">{{$editLocation->country}}</option>
 		                  @endforeach
 		                </select>
@@ -48,7 +48,7 @@
 		    	        <label class="mr-sm-2" for="inlineFormCustomSelect">Your friend's Education</label>
 		                <select data-placeholder="Select a School" class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="educations[]">
 		                  <option selected>School</option>
-		                  @foreach($educations as $education)
+		                  @foreach($editEducations as $editEducation)
 		                  <option value="{{$editEducation->id}}">{{$editEducation->school}}</option>
 		                  @endforeach
 		                </select>
